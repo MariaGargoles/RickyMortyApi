@@ -11,9 +11,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route path="" element={<IndexPage />} />
-        <Route path="/personas" element={<PersonList />} />
+        <Route path="/personajes" element={<PersonList />} />
         <Route path="/episodios" element={<EpisodeList />} />
-        <Route path="/info" element={<Info />} />
+        <Route path="/info:name" element={<Info />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -1,0 +1,15 @@
+.FooterContainer {
+    background-color: #566573;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    height: 5rem;
+}
+
+.FooterContainer__title {
+    font-family: "Poetsen One", sans-serif;
+    font-size: 2em;
+    text-align: center;
+    padding-top: 1rem;
+    color: white;
+}
