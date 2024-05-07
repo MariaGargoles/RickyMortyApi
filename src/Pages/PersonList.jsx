@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 export const PersonList = (props) => {
-    const [results, setResults] = useState([]);
     const url = 'https://rickandmortyapi.com/api/character';
 
     useEffect(() => {
@@ -9,12 +8,11 @@ export const PersonList = (props) => {
             .then(response => { 
                 if (response.ok){
                     const jsonData = response.json();
-                    const arrayResults = jsonData.results.map(arrayResult => ({
-                        name: arrayResult.name,
-                        image: arrayResult.image,
-                        species: arrayResult.species
+                    const arrayResults = jsonData.props.map(arrayResult => ({
+                        name: props.name,
+                        image: props.image,
+                        species: props.species
                     }));
-                    setResults(arrayResults);
                 } else {
                     console.log("error");
                 }
