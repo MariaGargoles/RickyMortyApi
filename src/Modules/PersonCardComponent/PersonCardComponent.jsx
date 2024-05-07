@@ -1,4 +1,4 @@
-
+import { PersonList } from "../../Pages/PersonList"
 
 export const PersonCardComponent = (props) => {
 
