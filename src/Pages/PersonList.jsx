@@ -1,18 +1,25 @@
 import React, { useState, useEffect } from 'react';
 
-export const PersonList = (props) => {
-    const url = 'https://rickandmortyapi.com/api/character';
+import { PersonCardComponent } from '../Modules/PersonCardComponent/PersonCardComponent';
 
+export const PersonList = () => {
+    const [result, setResult] = useState([]);
+    const url = 'https://rickandmortyapi.com/api/character';
+ 
     useEffect(() => {
         const request = fetch(url)
             .then(response => { 
                 if (response.ok){
                     const jsonData = response.json();
-                    const arrayResults = jsonData.props.map(arrayResult => ({
-                        name: props.name,
-                        image: props.image,
-                        species: props.species
-                    }));
+                    jsonData.then((data) => {
+                        const arrayResults = data.results.map((personaje,index) => ({
+                            name: personaje.name,
+                            image: personaje.image,
+                            species: personaje.species
+                        }));
+                        setResult(arrayResults);
+                    })
+                   
                 } else {
                     console.log("error");
                 }
@@ -21,4 +28,9 @@ export const PersonList = (props) => {
                 console.error('Hubo un problema con la llamada a la api:', error);
             });
     }, []);
+
+    return <>
+    {result.map((personaje,index) => <PersonCardComponent name={personaje.name} image={personaje.image} species={personaje.species}/>)}
+
+    </>
 };
