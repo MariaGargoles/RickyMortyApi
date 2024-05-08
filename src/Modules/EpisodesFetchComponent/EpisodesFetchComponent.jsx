@@ -16,7 +16,7 @@ export const EpisodesFetchComponent = () => {
                             numero: episodio.id,
                             name: episodio.name,
                             date: episodio.air_date,
-                            personajes: episodio.characters
+                            
                             
                         }));
                         console.log(arrayResults)
@@ -33,7 +33,7 @@ export const EpisodesFetchComponent = () => {
     }, []);
 
     return <>
-    {result.map((episodio,index) => <EpisodesCard id={episodio.id} name={episodio.name} date={episodio.date} personajes={episodio.characters}/>)}
+    {result.map((episodio,index) => <EpisodesCard id={episodio.id} name={episodio.name} date={episodio.date}/>)}
 
     </>
 };
