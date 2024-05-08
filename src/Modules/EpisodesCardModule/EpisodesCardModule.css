@@ -1,0 +1,30 @@
+.EpisodeComponentSection {
+    width: 100%;
+    background-color:#abb2b9;
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.EpisodeComponentSection__Container {
+    background-color: #566573;
+    width: 50%;
+    padding: 3rem;
+    display: inline-block;
+    border-radius: 4rem;
+    
+}
+
+.EpisodeComponent__title {
+    text-align: center;
+    font-size: 2em;
+    font-family: "Poetsen One", sans-serif;
+    color: white;
+}
+
+.EpisodeComponent__date {
+    text-align: center;
+    font-size: 1.3em;
+    font-family: "Poetsen One", sans-serif;
+    color: whitesmoke;
+}
