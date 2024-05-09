@@ -12,7 +12,7 @@
     background-color: #566573;
     padding: 3rem;
     display: inline-block;
-    width: 50%;
+    width: 40%;
     border-radius: 4rem;
   
     
@@ -24,6 +24,8 @@
     font-family: "Poetsen One", sans-serif;
     padding-left: 1rem;
     color: white;
+    width: 50%;
+
 }
 
 .CardComponent__img { 

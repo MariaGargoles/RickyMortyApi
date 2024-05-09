@@ -1,10 +1,11 @@
-import { FooterModule } from '../Modules/FooterModule/FooterModule'
-import {NavModule} from '../Modules/NavModule/NavModule'
+import { FooterComponent } from '../Modules/FooterComponent/FooterComponent'
+import { NavComponent } from '../Modules/NavComponent/NavComponent'
+
 
 export const IndexPage = () => {
     return(
     <>
-    <NavModule />
-    <FooterModule/>
+    <NavComponent />
+    <FooterComponent/>
     </>)
 }

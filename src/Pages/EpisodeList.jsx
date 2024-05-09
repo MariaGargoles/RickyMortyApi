@@ -1,12 +1,12 @@
-import { FooterModule } from '../Modules/FooterModule/FooterModule'
-import {NavModule} from '../Modules/NavModule/NavModule'
+import { FooterComponent } from '../Modules/FooterComponent/FooterComponent'
+import { NavComponent } from '../Modules/NavComponent/NavComponent'
 import { EpisodesFetchComponent } from '../Modules/EpisodesFetchComponent/EpisodesFetchComponent'
 
 export const EpisodeList = () => {
     return(<>
-    <NavModule />
+    <NavComponent />
     <EpisodesFetchComponent />
-    <FooterModule/>
+    <FooterComponent/>
     
     </>)
 }

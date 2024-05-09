@@ -8,7 +8,7 @@ export const EpisodesCard = (props) => {
                 <div className="EpisodeComponentSection__Container">
                     <h3 className="EpisodeComponent__title">{props.name}</h3>
                     <p className="EpisodeComponent__date">{props.date}</p>
-                 
+                    <p>Mas información</p>
                     </div>
                 </section>
         </> )

@@ -1,7 +1,7 @@
 import React from 'react';
 import './FooterModule.css';
 
-export const FooterModule = () => {
+export const FooterComponent = () => {
 
     return (<>
     <footer className='FooterContainer'>

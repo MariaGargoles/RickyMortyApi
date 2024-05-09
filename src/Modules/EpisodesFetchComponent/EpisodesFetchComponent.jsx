@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { EpisodesCard } from '../EpisodesCardModule/EpisodesCardModule';
-
+import { EpisodesCard } from '../EpisodesCardComponent/EpisodesCardComponent';
 
 export const EpisodesFetchComponent = () => {
     const [result, setResult] = useState([]);
@@ -15,6 +14,7 @@ export const EpisodesFetchComponent = () => {
                         const arrayResults = data.results.map((episodio,index) => ({
                             name: episodio.name,
                             date: episodio.air_date,
+                            characters: episodio.characters,
                             
                             
                         }));
