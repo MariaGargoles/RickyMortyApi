@@ -7,6 +7,7 @@ import { EpisodeList } from './Pages/EpisodeList.jsx';
 import { Info } from './Pages/Info.jsx'; 
 import { Provider } from "react-redux"
 import {store} from "./app/store.js"
+import { CharacterCreate } from './Pages/AddCharacter.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -17,6 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/personajes" element={<PersonList />} />
         <Route path="/episodios" element={<EpisodeList />} />
         <Route path="/info" element={<Info />} />
+        <Route path="/CreaTuPersonaje" element={<CharacterCreate />} />
       </Routes>
     </BrowserRouter>
     </Provider>

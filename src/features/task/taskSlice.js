@@ -13,4 +13,4 @@ export const TaskSlice = createSlice({
   },
 });
 
-export const { addCharacter, removeCharacter } = charactersSlice.actions;
+export const { addCharacter, removeCharacter } = TaskSlice.actions;
