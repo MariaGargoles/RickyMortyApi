@@ -11,12 +11,12 @@
     return (
         <>
             <h2 className="FormTitle">Create your own character:</h2>
-            <form className="FormContainer">
+            <form className="FormContainer" onSubmit={submitHandler}>
                 <label className="FormContainer__characterName">Character Name:</label>
                 <input type="text" id="CharacterName" placeholder="Insert Name"/>
                 <label className="FormContainer__characterSpecies">Species:</label>
                 <input type="text" id="CharacterSpecies" placeholder="Insert Specie"/>
-                <button className="FormContainer__button" type="submit" onSubmit={submitHandler}>Create</button>
+                <button className="FormContainer__button" type="submit">Create</button>
             </form>
         </>
     )
