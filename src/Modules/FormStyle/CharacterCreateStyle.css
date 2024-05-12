@@ -1,0 +1,55 @@
+.FormTitle {
+    background-color:#abb2b9;
+    font-size: 2em;
+    font-family: "Poetsen One", sans-serif;
+    color: whitesmoke;
+    padding: 2rem;
+    text-align: center;
+    margin: auto;
+    
+}
+
+.FormContainer {
+    width: 100%;
+    background-color:#abb2b9;
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    text-align: center;
+    margin: auto;
+    
+}
+
+.FormContainer__characterName {
+    text-align: center;
+    font-size: 1.3em;
+    font-family: "Poetsen One", sans-serif;
+    color: whitesmoke;
+    margin: 1rem;
+}
+
+.FormContainer__characterSpecies {
+    text-align: center;
+    font-size: 1.3em;
+    font-family: "Poetsen One", sans-serif;
+    color: whitesmoke;
+}
+
+.FormContainer__button {
+ background-color: #566573;
+ font-size: 1.3em;
+    font-family: "Poetsen One", sans-serif;
+    color: whitesmoke;
+    padding: 1.5rem;
+    border: none;
+    border-radius: 2.5rem;
+}
+
+.FormContainer__input {
+    width: 10rem;
+    border-radius: 50%;
+    text-align: center;
+    padding: 1rem;
+    border: none;
+}
