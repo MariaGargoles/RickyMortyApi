@@ -7,6 +7,10 @@ export const TaskSlice = createSlice({
     addCharacter: (state, action) => {
       state.push(action.payload);
     },
-    removeCharacter: (state, action) => {},
+    removeCharacter: (state, action) => {
+      return state.filter((character) => character.id !== action.payload);
+    },
   },
 });
+
+export const { addCharacter, removeCharacter } = charactersSlice.actions;
