@@ -11,6 +11,7 @@ export const TaskSlice = createSlice({
       return state.filter((character) => character.id !== action.payload);
     },
   },
+  extraReducers: (builder) => {},
 });
 
 export const { addCharacter, removeCharacter } = TaskSlice.actions;
