@@ -1,35 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import { PersonCardComponent } from '../PersonCardComponent/PersonCardComponent';
+import { useDispatch, useSelector } from 'react-redux';
+import { GetTaskListThunk } from '../../features/task/taskThunk';
 
 export const PersonFetchComponent = () => {
-    const [result, setResult] = useState([]);
-    const url = 'https://rickandmortyapi.com/api/character';
- 
+    
+    const [loading,setLoading] = useState(false)
+    const [data, setData] = useState([])
+    const taskList  = useSelector((state) => state.task.data)
+    const taskStatus = useSelector((state) => state.task.status)
+    const taskError = useSelector((state) => state.task.error)
+    const dispatch = useDispatch()
+
+    console.log(taskList)
     useEffect(() => {
-        const request = fetch(url)
-            .then(response => { 
-                if (response.ok){
-                    const jsonData = response.json();
-                    jsonData.then((data) => {
-                        const arrayResults = data.results.map((personaje,index) => ({
-                            name: personaje.name,
-                            image: personaje.image,
-                            species: personaje.species
-                        }));
-                        setResult(arrayResults);
-                    })
-                   
-                } else {
-                    console.log("error");
-                }
-            })
-            .catch(error => {
-                console.error('Hubo un problema con la llamada a la api:', error);
-            });
-    }, []);
+        if (taskStatus === "idle"){
+            dispatch(GetTaskListThunk())
 
+        }else if (taskStatus === "pending"){
+            setLoading(true)
+
+        }else if (taskStatus === "fulfilled"){
+            setLoading(false)
+            setData(taskList)
+        }else {
+            alert("Error")
+        }
+    }, [taskStatus,dispatch,taskList])
+    
+    
+    
     return <>
-    {result.map((personaje,index) => <PersonCardComponent name={personaje.name} image={personaje.image} species={personaje.species}/>)}
-
+    {loading ? <p>Loading...</p> : <>{taskList.map((character, index) => <PersonCardComponent name={character.name} image={character.image} species={character.species} />)}
+    
+    </>}
+   
     </>
 };

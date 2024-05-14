@@ -23,6 +23,7 @@ export const TaskSlice = createSlice({
       })
       .addCase(GetTaskListThunk.fulfilled, (state, action) => {
         state.status = "fulfilled";
+        state.data = action.payload;
       })
       .addCase(GetTaskListThunk.rejected, (state, action) => {
         state.status = "rejected";

@@ -13,6 +13,7 @@ export const GetTaskListThunk = createAsyncThunk(
           species: personaje.species,
         }));
         return arrayResults;
+        console.log(arrayResults);
       }
       return false;
     } catch (error) {
