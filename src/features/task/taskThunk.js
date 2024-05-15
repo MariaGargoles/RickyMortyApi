@@ -21,3 +21,25 @@ export const GetTaskListThunk = createAsyncThunk(
     }
   }
 );
+
+export const GetEpisodeListThunk = createAsyncThunk(
+  "Episode/getEpisodeList",
+  async () => {
+    const request = await fetch("https://rickandmortyapi.com/api/episode");
+    try {
+      if (request.ok) {
+        const data = await request.json();
+        const arrayResults = data.results.map((episodio, index) => ({
+          name: episodio.name,
+          date: episodio.air_date,
+          characters: episodio.characters,
+        }));
+        return arrayResults;
+        console.log(arrayResults);
+      }
+      return false;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);

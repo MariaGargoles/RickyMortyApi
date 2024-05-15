@@ -12,7 +12,7 @@ export const PersonFetchComponent = () => {
     const taskError = useSelector((state) => state.task.error)
     const dispatch = useDispatch()
 
-    console.log(taskList)
+   
     useEffect(() => {
         if (taskStatus === "idle"){
             dispatch(GetTaskListThunk())
