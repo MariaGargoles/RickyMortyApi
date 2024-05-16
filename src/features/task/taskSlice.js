@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { GetTaskListThunk } from "./taskThunk";
+import { GetEpisodeListThunk } from "./taskThunk";
 
 export const TaskSlice = createSlice({
   name: "task",
@@ -31,4 +32,32 @@ export const TaskSlice = createSlice({
   },
 });
 
+export const EpisodeSlice = createSlice({
+  name: "episode",
+  initialState: {
+    status: "idle",
+    data: [],
+    error: null,
+  },
+  reducers: {
+    addEpisode: (state, action) => {
+      state.data.push(action.payload);
+    },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(GetEpisodeListThunk.pending, (state, action) => {
+        state.status = "pending";
+      })
+      .addCase(GetEpisodeListThunk.fulfilled, (state, action) => {
+        state.status = "fulfilled";
+        state.data = action.payload;
+      })
+      .addCase(GetEpisodeListThunk.rejected, (state, action) => {
+        state.status = "rejected";
+      });
+  },
+});
+
 export const { addCharacter, removeCharacter } = TaskSlice.actions;
+export const { addEpisode } = EpisodeSlice.actions;

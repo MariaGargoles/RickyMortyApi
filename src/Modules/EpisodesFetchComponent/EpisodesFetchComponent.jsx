@@ -1,38 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import { EpisodesCard } from '../EpisodesCardComponent/EpisodesCardComponent';
+import { useDispatch, useSelector } from 'react-redux';
+import { GetEpisodeListThunk } from '../../features/task/taskThunk';
 
 export const EpisodesFetchComponent = () => {
-    const [result, setResult] = useState([]);
-    const url = 'https://rickandmortyapi.com/api/episode';
- 
+    const [loading, setLoading] = useState(false);
+    const [episodes, setEpisodes] = useState([]);
+    const episodeList = useSelector((state) => state.episode.data);
+    const episodeStatus = useSelector((state) => state.episode.status);
+    const episodeError = useSelector((state) => state.episode.error);
+    const dispatch = useDispatch();
+
     useEffect(() => {
-        const request = fetch(url)
-            .then(response => { 
-                if (response.ok){
-                    const jsonData = response.json();
-                    jsonData.then((data) => {
-                        const arrayResults = data.results.map((episodio,index) => ({
-                            name: episodio.name,
-                            date: episodio.air_date,
-                            characters: episodio.characters,
-                            
-                            
-                        }));
-                        console.log(arrayResults)
-                        setResult(arrayResults);
-                    })
-                   
-                } else {
-                    console.log("error");
-                }
-            })
-            .catch(error => {
-                console.error('Hubo un problema con la llamada a la api:', error);
-            });
-    }, []);
+        if (episodeStatus === 'idle') {
+            dispatch(GetEpisodeListThunk());
+        } else if (episodeStatus === 'pending') {
+            setLoading(true);
+        } else if (episodeStatus === 'fulfilled') {
+            setLoading(false);
+            setEpisodes(episodeList);
+        } else if (episodeStatus === 'rejected') {
+            setLoading(false);
+            alert('Error: ' + episodeError);
+        }
+    }, [episodeStatus, dispatch, episodeList, episodeError]);
 
-    return <>
-    {result.map((episodio,index) => <EpisodesCard name={episodio.name} date={episodio.date}/>)}
-
-    </>
+    return (
+        <>
+            {loading ? <p>Loading...</p> : episodes.map((episode, index) => (
+                <EpisodesCard key={index} name={episode.name} date={episode.date} />
+            ))}
+        </>
+    );
 };
