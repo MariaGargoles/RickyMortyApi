@@ -1,4 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { useParams } from "react-router-dom";
 
 export const GetTaskListThunk = createAsyncThunk(
   "task/getTaskList",
@@ -24,6 +25,7 @@ export const GetTaskListThunk = createAsyncThunk(
 
 export const GetEpisodeListThunk = createAsyncThunk(
   "Episode/getEpisodeList",
+
   async () => {
     const request = await fetch("https://rickandmortyapi.com/api/episode");
     try {
@@ -38,6 +40,34 @@ export const GetEpisodeListThunk = createAsyncThunk(
         console.log(arrayResults);
       }
       return false;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
+export const GetExtraInfoThunk = createAsyncThunk(
+  "Episodes/getEpisodeExtraInfo",
+  async (id) => {
+    try {
+      const response = await fetch(
+        `https://rickandmortyapi.com/api/episode/${id}`
+      );
+      if (response.ok) {
+        const episode = await response.json();
+        const characterIds = episode.characters.map((url) => url.split("/")[5]);
+        const charactersResponse = await fetch(
+          `https://rickandmortyapi.com/api/character/${characterIds.join(",")}`
+        );
+        if (charactersResponse.ok) {
+          const characters = await charactersResponse.json();
+          return { episode, characters };
+        } else {
+          console.log("Failed to fetch characters");
+        }
+      } else {
+        console.log("Failed to fetch episode");
+      }
     } catch (error) {
       console.log(error);
     }

@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { IndexPage } from './Pages/Index.jsx';
 import { PersonList } from './Pages/PersonList.jsx';
 import { EpisodeList } from './Pages/EpisodeList.jsx';
-import { Info } from './Pages/Info.jsx'; 
+import { InfoEpisodes } from './Pages/InfoEpisodes.jsx';
 import { Provider } from "react-redux"
 import {store} from "./app/store.js"
 import { CharacterCreate } from './Pages/AddCharacter.jsx';
@@ -17,7 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="" element={<IndexPage />} />
         <Route path="/personajes" element={<PersonList />} />
         <Route path="/episodios" element={<EpisodeList />} />
-        <Route path="/info" element={<Info />} />
+        <Route path="/info" element={<InfoEpisodes />} />
         <Route path="/CreaTuPersonaje" element={<CharacterCreate />} />
       </Routes>
     </BrowserRouter>
