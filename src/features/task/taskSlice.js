@@ -68,15 +68,12 @@ export const ExtraInfoEpisodeSlice = createSlice({
     status: "idle",
     error: null,
   },
-  reducers: {
-    addExtra: (state, action) => {
-      state.data.push(action.payload);
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(GetExtraInfoThunk.pending, (state, action) => {
+      .addCase(GetExtraInfoThunk.pending, (state) => {
         state.status = "pending";
+        state.error = null;
       })
       .addCase(GetExtraInfoThunk.fulfilled, (state, action) => {
         state.status = "fulfilled";
@@ -85,6 +82,7 @@ export const ExtraInfoEpisodeSlice = createSlice({
       })
       .addCase(GetExtraInfoThunk.rejected, (state, action) => {
         state.status = "rejected";
+        state.error = action.payload;
       });
   },
 });

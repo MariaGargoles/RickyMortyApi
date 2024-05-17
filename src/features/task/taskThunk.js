@@ -32,6 +32,7 @@ export const GetEpisodeListThunk = createAsyncThunk(
       if (request.ok) {
         const data = await request.json();
         const arrayResults = data.results.map((episodio, index) => ({
+          id: episodio.id,
           name: episodio.name,
           date: episodio.air_date,
           characters: episodio.characters,

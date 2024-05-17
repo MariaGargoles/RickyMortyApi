@@ -10,7 +10,6 @@ export const NavComponent = () => {
         <ul className='NavarContainer__Menu'>
             <NavLink  to="/episodios" className='NavarContainer__Menu--item'>Episodios</NavLink >
             <NavLink  to="/personajes" className='NavarContainer__Menu--item'>Lista de personajes</NavLink>
-            <NavLink to="/info" className='NavarContainer__Menu--item'>Información extra</NavLink>
             <NavLink to="/CreaTuPersonaje" className='NavarContainer__Menu--item'>Crea tu personaje</NavLink>
         </ul>
     </nav>

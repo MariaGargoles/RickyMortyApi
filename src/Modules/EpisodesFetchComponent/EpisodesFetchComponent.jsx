@@ -24,11 +24,11 @@ export const EpisodesFetchComponent = () => {
             alert('Error: ' + episodeError);
         }
     }, [episodeStatus, dispatch, episodeList, episodeError]);
-
+    console.log(episodes)
     return (
         <>
             {loading ? <p>Loading...</p> : episodes.map((episode, index) => (
-                <EpisodesCard key={index} name={episode.name} date={episode.date} />
+                <EpisodesCard key={index} id={episode.id} name={episode.name} date={episode.date} />
             ))}
         </>
     );

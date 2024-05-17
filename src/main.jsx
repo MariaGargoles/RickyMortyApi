@@ -17,7 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="" element={<IndexPage />} />
         <Route path="/personajes" element={<PersonList />} />
         <Route path="/episodios" element={<EpisodeList />} />
-        <Route path="/info" element={<InfoEpisodes />} />
+        <Route path="/ExtraInfoEpisodes/:id" element={<InfoEpisodes />} />
         <Route path="/CreaTuPersonaje" element={<CharacterCreate />} />
       </Routes>
     </BrowserRouter>
