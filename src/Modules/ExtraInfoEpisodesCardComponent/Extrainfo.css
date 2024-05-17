@@ -1,0 +1,12 @@
+.ExtraInfoEpisodesCardContainer {
+    background-color: #abb2b9;
+    display: flex;
+    padding: 5rem;
+    
+}
+
+.ExtraInfoEpisodesCardContainer__text {
+    font-size: 1.5em;
+    font-family: "Poetsen One", sans-serif;
+    padding-left: 1rem;
+}

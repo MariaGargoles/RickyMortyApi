@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { GetExtraInfoThunk } from '../../features/task/taskThunk';
 import { useParams } from 'react-router-dom';
 import { ExtraInfoEpisodesCard } from '../ExtraInfoEpisodesCardComponent/ExtraInfoEpisodesCardComponent';
+import "./ExtrainfoComponent.css"
 
 export const ExtraInfoComponent = () => {
   const { id } = useParams();

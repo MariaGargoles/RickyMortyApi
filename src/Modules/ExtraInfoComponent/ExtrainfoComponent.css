@@ -1,0 +1,16 @@
+.ContainerInfoEpisodes__title {
+    background-color: #abb2b9;
+    padding: 3rem;
+    font-size: 2em;
+    font-family: "Poetsen One", sans-serif;
+    border: 2px solid black;
+}
+
+.ContainerInfoEpisodes__characters__title {
+    background-color: #abb2b9;
+    padding: 4rem;
+    font-size: 2em;
+    font-family: "Poetsen One", sans-serif;
+    border: 2px solid black;
+    text-align: center;
+}

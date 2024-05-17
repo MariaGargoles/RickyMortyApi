@@ -1,0 +1,11 @@
+.ContainerMain {
+display: flex;
+justify-content: center;
+width: 43%;
+}
+
+.ContainerMain__Imagen {
+    background-color: white;
+    padding: 4rem;
+    
+}

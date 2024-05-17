@@ -1,18 +1,16 @@
 .CardComponent {
     
     background-color: #abb2b9;
-    display: inline-flex;
-    flex-direction: column;
-    padding: 5rem;
-    width: 100%;
+    display: grid;
+    gap: 1.5rem;
+    padding: 3rem;
+    
 }
 
 .CardComponentContainer {
     
     background-color: #566573;
     padding: 3rem;
-    display: inline-block;
-    width: 40%;
     border-radius: 4rem;
   
     
@@ -20,11 +18,10 @@
 
 .CardComponent__title {
     font-size: 2em;
-    display: inline-block;
     font-family: "Poetsen One", sans-serif;
     padding-left: 1rem;
     color: white;
-    width: 50%;
+  
 
 }
 

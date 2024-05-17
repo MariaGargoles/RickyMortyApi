@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { PersonCardComponent } from '../PersonCardComponent/PersonCardComponent';
 import { useDispatch, useSelector } from 'react-redux';
 import { GetTaskListThunk } from '../../features/task/taskThunk';
+import "./PersonFetch.css"
 
 export const PersonFetchComponent = () => {
     
@@ -31,7 +32,7 @@ export const PersonFetchComponent = () => {
     
     
     return <>
-    {loading ? <p>Loading...</p> : <>{taskList.map((character, index) => <PersonCardComponent name={character.name} image={character.image} species={character.species} />)}
+    {loading ? <p>Loading...</p> : <>{taskList.map((character, index) => <><PersonCardComponent name={character.name} image={character.image} species={character.species} /></>)}
     
     </>}
    

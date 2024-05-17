@@ -10,7 +10,7 @@ export const EpisodesCard = (props) => {
                     
                     <h3 className="EpisodeComponent__title">{props.name}</h3>
                     <p className="EpisodeComponent__date">{props.date}</p>
-                    <NavLink to={`/ExtraInfoEpisodes/${props.id}`}><button>Mas información</button></NavLink>
+                    <NavLink to={`/ExtraInfoEpisodes/${props.id}`}><button className='EpisodeComponent__button'>Mas información</button></NavLink>
                     
                     </div>
                 </section>
