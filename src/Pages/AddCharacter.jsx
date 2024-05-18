@@ -11,8 +11,9 @@ export const CharacterCreate = () => {
   const submitHandler = (event) => {
     event.preventDefault()
     const name = event.target.elements.CharacterName.value;
+    const image = 'https://rickandmortyapi.com/api/character/avatar/19.jpeg'
     const species = event.target.elements.CharacterSpecies.value;
-    dispatch(addCharacter({ name, species }))
+    dispatch(addCharacter({ name, species, image }))
     
   }
 

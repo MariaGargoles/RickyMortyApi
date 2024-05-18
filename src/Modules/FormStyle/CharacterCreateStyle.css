@@ -44,6 +44,7 @@
     padding: 1.5rem;
     border: none;
     border-radius: 2.5rem;
+    cursor: pointer;
 }
 
 .FormContainer__input {
